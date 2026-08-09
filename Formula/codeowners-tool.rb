@@ -1,26 +1,26 @@
 class CodeownersTool < Formula
   desc "Safe, intent-level, verifiable CODEOWNERS changes"
   homepage "https://github.com/jordonpeterson/codeowners-tool"
-  version "0.0.7"
+  version "0.0.8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.7/codeowners-tool_v0.0.7_darwin_arm64.tar.gz"
-      sha256 "b21b0da6178283214e7a656ee7a7defcf1ee839e9602878338ef78bc34bd5b1f"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.8/codeowners-tool_v0.0.8_darwin_arm64.tar.gz"
+      sha256 "e6c7bfa7a6f91752396c315bb6dcf26693618585ebe6d7df8f5dbb7a9651306b"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.7/codeowners-tool_v0.0.7_darwin_amd64.tar.gz"
-      sha256 "5db0cfc5cf8248d92e18805e76c11031518c27b3ad63b231b20ee16f50e029b8"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.8/codeowners-tool_v0.0.8_darwin_amd64.tar.gz"
+      sha256 "db27c400de50bc89b0e149fe9875c01ab050e078c856473bdf2063335354af5b"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.7/codeowners-tool_v0.0.7_linux_arm64.tar.gz"
-      sha256 "8c6f951062599ea537c0a579e5a6b6313b6ac29bf943567e4686a821fff1c92a"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.8/codeowners-tool_v0.0.8_linux_arm64.tar.gz"
+      sha256 "01261b1845ad069be0bf8afce2446b89afc216fc158683f2f17da4c08930eb26"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.7/codeowners-tool_v0.0.7_linux_amd64.tar.gz"
-      sha256 "cbed2afd6939d5d91f4b1ae5d825c974890e56cfbc4658d950ff019c0d6869e4"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.8/codeowners-tool_v0.0.8_linux_amd64.tar.gz"
+      sha256 "8536dca05be31b81685266e3f92d0fdad37d47bf0267b3a3bfe5d977d8627213"
     end
   end
 
