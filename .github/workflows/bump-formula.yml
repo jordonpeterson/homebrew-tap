@@ -1,0 +1,94 @@
+name: Bump formula
+
+# Keeps Formula/codeowners-tool.rb pointed at the newest codeowners-tool release.
+#
+# The bump is PULLED by this repository rather than PUSHED by the upstream
+# release workflow. Pushing required a personal access token with write on this
+# repository, stored upstream as a secret: a standing cross-repo credential that
+# expires, that nothing here can see the state of, and whose absence upstream was
+# reported as a skipped step on a green job. The formula sat four releases stale
+# for weeks that way. Pulling needs no secret at all — the built-in GITHUB_TOKEN
+# already writes to the repository it runs in.
+#
+# The cost of pulling is latency: a release cannot notify this repository without
+# reintroducing the very token this design removes. The hourly schedule bounds
+# staleness to about an hour; run the workflow by hand from the Actions tab to
+# bump immediately.
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+# One bump at a time; a second run would race the first one's push.
+concurrency:
+  group: bump-formula
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    name: bump codeowners-tool
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # commit the regenerated formula to this repository
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Bump to the latest upstream release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          UPSTREAM: jordonpeterson/codeowners-tool
+        run: |
+          set -euo pipefail
+
+          tag="$(gh release view --repo "$UPSTREAM" --json tagName -q .tagName)"
+          ver="${tag#v}"
+          formula="Formula/codeowners-tool.rb"
+
+          current="$(sed -n 's/^  version "\(.*\)"$/\1/p' "$formula" | head -1)"
+          if [ "$current" = "$ver" ]; then
+            echo "::notice::Formula is already at ${ver}."
+            exit 0
+          fi
+          echo "Bumping ${current:-<unset>} -> ${ver}"
+
+          work="$(mktemp -d)"
+          gh release download "$tag" --repo "$UPSTREAM" --dir "$work" \
+            --pattern 'checksums.txt' \
+            --pattern '*_darwin_*.tar.gz' \
+            --pattern '*_linux_*.tar.gz'
+
+          # The formula's sha256 values come from checksums.txt, which ships on the
+          # same release from the same host as the archives it covers — it proves
+          # integrity in transit and nothing about origin. Verifying the build
+          # provenance first is what makes this bump mean "built by the upstream
+          # release workflow" rather than "whatever that release currently holds".
+          # A verification that runs and fails must stop the bump: a stale formula
+          # is recoverable, a formula pointing at an unverified binary is not.
+          # One artifact per invocation: `gh attestation verify` takes a single
+          # path, and a glob would be read as stray arguments.
+          for archive in "$work"/*.tar.gz; do
+            gh attestation verify "$archive" --repo "$UPSTREAM"
+          done
+
+          # gen-formula.sh is fetched at the release tag rather than vendored here:
+          # a vendored copy drifts from the archive names the upstream build
+          # actually produces, and the formula it writes already points at that
+          # release's binaries, so the tag is the trust boundary either way.
+          curl -fsSL \
+            "https://raw.githubusercontent.com/${UPSTREAM}/${tag}/tools/gen-formula.sh" \
+            -o "$work/gen-formula.sh"
+          sh "$work/gen-formula.sh" "$tag" "$work/checksums.txt" > "$formula"
+
+          if git diff --quiet -- "$formula"; then
+            echo "::error::Regenerating the formula for ${tag} changed nothing, but the version read as ${current:-<unset>}. gen-formula.sh and this workflow disagree about the formula's shape."
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "codeowners-tool ${ver}" -- "$formula"
+          git push
