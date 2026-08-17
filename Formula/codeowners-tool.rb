@@ -1,26 +1,26 @@
 class CodeownersTool < Formula
   desc "Safe, intent-level, verifiable CODEOWNERS changes"
   homepage "https://github.com/jordonpeterson/codeowners-tool"
-  version "0.0.9"
+  version "0.0.10"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.9/codeowners-tool_v0.0.9_darwin_arm64.tar.gz"
-      sha256 "4b27a8dd3917e88f2e6b896f6ec6477ea7b52ffb9978570864cd20268b6e25e4"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.10/codeowners-tool_v0.0.10_darwin_arm64.tar.gz"
+      sha256 "e9ec497e8482992e77f6b2ecd593614e05aeb81cbcd22a7d324492b979fd4686"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.9/codeowners-tool_v0.0.9_darwin_amd64.tar.gz"
-      sha256 "9d96bc266c7047f88401a123d50a44d29227d0edd774e4f220aa7d01ce704ec1"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.10/codeowners-tool_v0.0.10_darwin_amd64.tar.gz"
+      sha256 "e273d2333b02d5dd30686d08869dad3d94a6f5b11c2b0a3a7fc278718ffddf58"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.9/codeowners-tool_v0.0.9_linux_arm64.tar.gz"
-      sha256 "6c3d09dff015cda3876a98daa75ac71066766a039ed3decc8ec84857f203a962"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.10/codeowners-tool_v0.0.10_linux_arm64.tar.gz"
+      sha256 "f5809cc538148309bf1a522851be0ac2ab1f5d8ad39b38c20171bf43afaa8ed0"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.9/codeowners-tool_v0.0.9_linux_amd64.tar.gz"
-      sha256 "63e0f8adfda56d4f625119c49f9ca761d97f5bab6ce4a348af961d20de0def98"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.10/codeowners-tool_v0.0.10_linux_amd64.tar.gz"
+      sha256 "8d899ed676a834983dcb5b01596e9232942d52a98ee23c08b74c69ef39281f38"
     end
   end
 
