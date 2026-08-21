@@ -1,26 +1,26 @@
 class CodeownersTool < Formula
   desc "Safe, intent-level, verifiable CODEOWNERS changes"
   homepage "https://github.com/jordonpeterson/codeowners-tool"
-  version "0.0.12"
+  version "0.0.13"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.12/codeowners-tool_v0.0.12_darwin_arm64.tar.gz"
-      sha256 "3ee6eac50a534c0331fee9ac2726d48a855e28eec66bb8dfa3b1988f4af8e185"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.13/codeowners-tool_v0.0.13_darwin_arm64.tar.gz"
+      sha256 "f08bdbc32291d47934576dd651435fa1a3042470b21d7001d84739c380ee06d5"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.12/codeowners-tool_v0.0.12_darwin_amd64.tar.gz"
-      sha256 "96e337be7e96d7350ece3826fbc6d840a94bfa59b56576e86e92699d4cc551d5"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.13/codeowners-tool_v0.0.13_darwin_amd64.tar.gz"
+      sha256 "6d8f778d0d1d0aa1e800d24c8e1342b2f889fe2ee98459786263349e8ca008b5"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.12/codeowners-tool_v0.0.12_linux_arm64.tar.gz"
-      sha256 "1c8120053a7f656f505d7c9d076e4ec63466443e73598a3aae40be4981a454a9"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.13/codeowners-tool_v0.0.13_linux_arm64.tar.gz"
+      sha256 "e1490d2209fd8fd793d69fc454be8554148d47cb4c6b712d56763bda2f91fa0e"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.12/codeowners-tool_v0.0.12_linux_amd64.tar.gz"
-      sha256 "335d6031c49c54b92efd0cd0d6aeac113a8c5c08a0a8b5f3600d4b717022c91b"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.13/codeowners-tool_v0.0.13_linux_amd64.tar.gz"
+      sha256 "5463fc279db9ede8611734368d0366be5b59969634b6ddee019a975bfd08be32"
     end
   end
 
