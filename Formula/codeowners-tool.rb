@@ -1,26 +1,26 @@
 class CodeownersTool < Formula
   desc "Safe, intent-level, verifiable CODEOWNERS changes"
   homepage "https://github.com/jordonpeterson/codeowners-tool"
-  version "0.0.15"
+  version "0.0.16"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.15/codeowners-tool_v0.0.15_darwin_arm64.tar.gz"
-      sha256 "324c471c640149055c6bf66a86290b9a7d41117fb5eb3d8ad1adaddbba14296f"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.16/codeowners-tool_v0.0.16_darwin_arm64.tar.gz"
+      sha256 "89745ce1ad2945d26aa7f20f6e01670e308e7c11b2763546edaf5186c845d7bb"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.15/codeowners-tool_v0.0.15_darwin_amd64.tar.gz"
-      sha256 "9824af778601d6b21a8330193947cfa5ca9057a29e13f94b0e7a508702e0d05c"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.16/codeowners-tool_v0.0.16_darwin_amd64.tar.gz"
+      sha256 "7a9345ec0c85e29e9ea2d9cc7e94e853b03570b479e0d63c31d304a5b7080f1c"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.15/codeowners-tool_v0.0.15_linux_arm64.tar.gz"
-      sha256 "b4ea55679df45a7ba8a9cfdc24e5e76f558b2d3a3fb47bce6fdf3c2e578119a6"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.16/codeowners-tool_v0.0.16_linux_arm64.tar.gz"
+      sha256 "242ebdb44ec21852849e6e84f44e892d962554b9d41ea8619b0ae47d2425ec42"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.15/codeowners-tool_v0.0.15_linux_amd64.tar.gz"
-      sha256 "9d3508a9ea0e00364df09dfe97acce77a4eeec68c3e8d03cc6b0df5b774dbfb9"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.16/codeowners-tool_v0.0.16_linux_amd64.tar.gz"
+      sha256 "a6b87a44294efd962c5761bd4e39935a70db29a41332ae51873c3a12d677ecb4"
     end
   end
 
