@@ -11,12 +11,14 @@ name: Bump formula
 # already writes to the repository it runs in.
 #
 # The cost of pulling is latency: a release cannot notify this repository without
-# reintroducing the very token this design removes. The hourly schedule bounds
-# staleness to about an hour; run the workflow by hand from the Actions tab to
-# bump immediately.
+# reintroducing the very token this design removes. Polling every ten minutes
+# bounds staleness to about ten minutes, which is the closest this design gets to
+# "bumped when upstream pushes to main". A run that finds the formula already
+# current exits after one API call, so the added runs cost almost nothing. Run the
+# workflow by hand from the Actions tab to bump immediately.
 on:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch: {}
 
 permissions:
