@@ -1,26 +1,26 @@
 class CodeownersTool < Formula
   desc "Safe, intent-level, verifiable CODEOWNERS changes"
   homepage "https://github.com/jordonpeterson/codeowners-tool"
-  version "0.0.18"
+  version "0.0.21"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.18/codeowners-tool_v0.0.18_darwin_arm64.tar.gz"
-      sha256 "9dd52d2cb31e8335cc8aeffcb3b6c7e0758e0948103387fb2e7daf3a7b595dcf"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.21/codeowners-tool_v0.0.21_darwin_arm64.tar.gz"
+      sha256 "28564e07e08c969a45809df8dd7098ef55a3d4400dd22b928ffcaf3e13897b30"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.18/codeowners-tool_v0.0.18_darwin_amd64.tar.gz"
-      sha256 "6fadeac05e6240ec770cd8a30fac6bcf15c77d531a31fa3c58bc96a27d50d855"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.21/codeowners-tool_v0.0.21_darwin_amd64.tar.gz"
+      sha256 "e462a82d5d26b6e5df5a07f2c6b0b8d867ad93d6591e601457204b05c53f186e"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.18/codeowners-tool_v0.0.18_linux_arm64.tar.gz"
-      sha256 "af2b494afd9e13281deb2841b735a7b988beb3ee994fa8342a5db5ff2c49b773"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.21/codeowners-tool_v0.0.21_linux_arm64.tar.gz"
+      sha256 "4805c8e271eb24bce0ef40bcf7463890d86a9b17a8b8f5e49a846f80e0ca990f"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.18/codeowners-tool_v0.0.18_linux_amd64.tar.gz"
-      sha256 "2600b3cae2f53e96933fe39b0faa306019ca3756004b9030cccab888c49cb99e"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.21/codeowners-tool_v0.0.21_linux_amd64.tar.gz"
+      sha256 "18289dbf05b310737357d1be12cfe8137445477bee6056cdc7f8bc4b42e45933"
     end
   end
 
