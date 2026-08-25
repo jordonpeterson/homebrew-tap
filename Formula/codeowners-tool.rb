@@ -1,26 +1,26 @@
 class CodeownersTool < Formula
   desc "Safe, intent-level, verifiable CODEOWNERS changes"
   homepage "https://github.com/jordonpeterson/codeowners-tool"
-  version "0.0.17"
+  version "0.0.18"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.17/codeowners-tool_v0.0.17_darwin_arm64.tar.gz"
-      sha256 "2e0e12838e90849d64c4e08352ebd04d67e99c340d23959c309915c21f5c7b2c"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.18/codeowners-tool_v0.0.18_darwin_arm64.tar.gz"
+      sha256 "9dd52d2cb31e8335cc8aeffcb3b6c7e0758e0948103387fb2e7daf3a7b595dcf"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.17/codeowners-tool_v0.0.17_darwin_amd64.tar.gz"
-      sha256 "f3f8e249530014535705516366a6d0baca035f30ca35ba020c31423d2d7428cd"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.18/codeowners-tool_v0.0.18_darwin_amd64.tar.gz"
+      sha256 "6fadeac05e6240ec770cd8a30fac6bcf15c77d531a31fa3c58bc96a27d50d855"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.17/codeowners-tool_v0.0.17_linux_arm64.tar.gz"
-      sha256 "10a136c17dc6b685caa7f12a518f1363bf28bd96b50e163d17b7e93eac390cb2"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.18/codeowners-tool_v0.0.18_linux_arm64.tar.gz"
+      sha256 "af2b494afd9e13281deb2841b735a7b988beb3ee994fa8342a5db5ff2c49b773"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.17/codeowners-tool_v0.0.17_linux_amd64.tar.gz"
-      sha256 "7f1c5c640420678c655b7a0d1cb0c016014abe424a21427d76e73f8fb43a1016"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.18/codeowners-tool_v0.0.18_linux_amd64.tar.gz"
+      sha256 "2600b3cae2f53e96933fe39b0faa306019ca3756004b9030cccab888c49cb99e"
     end
   end
 
