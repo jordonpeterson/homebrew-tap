@@ -1,26 +1,26 @@
 class CodeownersTool < Formula
   desc "Safe, intent-level, verifiable CODEOWNERS changes"
   homepage "https://github.com/jordonpeterson/codeowners-tool"
-  version "0.0.30"
+  version "1.0.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.30/codeowners-tool_v0.0.30_darwin_arm64.tar.gz"
-      sha256 "175cac697a7752901a2167c3d46e42dbef95dfe23a905d5a54adbd1ee7edb509"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v1.0.0/codeowners-tool_v1.0.0_darwin_arm64.tar.gz"
+      sha256 "e47e94a6e16bd93347e7a1a9c8d440f4aa774296fe35c08cc260bf3892c51284"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.30/codeowners-tool_v0.0.30_darwin_amd64.tar.gz"
-      sha256 "dd7b92ccc0caa80dad202daa9c3d12bb453a233ff8044c532f29eb9f59af31e0"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v1.0.0/codeowners-tool_v1.0.0_darwin_amd64.tar.gz"
+      sha256 "e2ed3503a5391ac5537264d90637c60077736b964c3a3e19df5e94db7a770542"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.30/codeowners-tool_v0.0.30_linux_arm64.tar.gz"
-      sha256 "3e2277ad7cf067f39321b04dc4da519207b508ff4e0b0ef88be0ddf7ea413540"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v1.0.0/codeowners-tool_v1.0.0_linux_arm64.tar.gz"
+      sha256 "c18ae0ccdf124b5624ba31f91d4383041e7b239207310f186b9616ee3b31eba7"
     else
-      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v0.0.30/codeowners-tool_v0.0.30_linux_amd64.tar.gz"
-      sha256 "eccbf72775903e94795d7473370d9a1fb750c8ce1cbbe0cb5f5db3e1e06c55c5"
+      url "https://github.com/jordonpeterson/codeowners-tool/releases/download/v1.0.0/codeowners-tool_v1.0.0_linux_amd64.tar.gz"
+      sha256 "7c8e520c04f22ffd7a6fe9ba84d8ca5bd1d08c73680c9c07861c3655fc34b2f8"
     end
   end
 
